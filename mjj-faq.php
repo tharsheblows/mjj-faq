@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: MJJ FAQ
+ * Plugin Name: MJJ FAQ Dependent
  * Version: 0.1-alpha
- * Description: A simple plugin using the WP-API and React to make faqs
+ * Description: A simple plugin using the WP-API and React to make faqs. This requires the MJJ React Plugins plugin to get a js file with the common components.
  * Author: JJ Jay
  * Text Domain: mjj-faq
  * Domain Path: /languages
@@ -39,6 +39,14 @@ class MJJ_FAQ{
 
 		register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 		register_activation_hook( __FILE__, array( 'MJJ_FAQ', 'mjj_faq_flush_rewrites' ) );
+
+		// this is dependent on the script made in MJJ React Scripts
+		if( !class_exists( 'MJJ_React_Scripts' ) ){
+			
+			if ( file_exists( plugins_url() . '/mjj-react-scripts/mjj-react-scripts.php' ) ) {	
+				require_once plugins_url() . '/mjj-react-scripts/mjj-react-scripts.php';
+			}
+		}
 	}
 
 	public static function add_styles() {
@@ -56,7 +64,7 @@ class MJJ_FAQ{
 
 			$suffix = ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : '.min'; //.min
 
-			wp_register_script( 'mjj-faq-script', plugin_dir_url( __FILE__ ) . 'js/mjj-faq' . $suffix . '.js', array(), '20150506', true );
+			wp_register_script( 'mjj-faq-script', plugin_dir_url( __FILE__ ) . 'js/mjj-faq' . $suffix . '.js', array('mjj-react-scripts'), '', true );
 			wp_localize_script( 'mjj-faq-script', 'faq_object', array( 'ID' => get_the_ID() ) );
 			wp_enqueue_script( 'mjj-faq-script' );
 

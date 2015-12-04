@@ -1,14 +1,9 @@
-var React = require('react');
-var ReactDOM = require( 'react-dom' );
-var VelocityComponent = require( 'velocity-react/velocity-component' );
 
-var velocityHelpers = require( 'velocity-react/velocity-helpers' );
+var page = MJJRS.page;
+var request = MJJRS.request;
+var marked = MJJRS.marked;
 
-
-var page = require( 'page' );
-var request = require( 'superagent' );
-
-var marked = require( 'marked' );
+var VelocityComponent = MJJRS.VelocityComponent;
 
 var Router = React.createClass({
 
@@ -110,14 +105,14 @@ var Entry = React.createClass({
 			<li className={entryClass}>
 				<a onClick={this.openAnswer}>
 					<VelocityComponent animation={{rotateZ: rotate }}>
-						<div className="faq-arrow">&#9661;</div>
+						<div key={this.state.clicks}>&#9661;</div>
 					</VelocityComponent>
 					<div className="faq-question">
 						{theQuestion}
 					</div>
 				</a>
 				<VelocityComponent animation={hideOrShow}>
-					<div className="faq-answer" dangerouslySetInnerHTML={answerMarkedUp}/>
+					<div dangerouslySetInnerHTML={answerMarkedUp}/>
 				</VelocityComponent>
 			</li>
 		);

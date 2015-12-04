@@ -37,7 +37,7 @@ module.exports = function( grunt ) {
 		browserify: {
       		dev: {
         		src: 'js/src/components/*.jsx',
-        		dest: 'js/mjj-faq.js'
+        		dest: 'js/mjj-faq.js',
       		},
       		prod: {
       			src: 'js/src/components/*.jsx',
@@ -87,15 +87,11 @@ module.exports = function( grunt ) {
 		}
 	} );
 
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
-	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
+
 	grunt.loadNpmTasks( 'grunt-browserify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-
-	grunt.registerTask( 'i18n', ['addtextdomain', 'makepot'] );
-	grunt.registerTask( 'readme', ['wp_readme_to_markdown'] );
 
 	grunt.registerTask( 'build', ['browserify:prod', 'uglify', 'sass' ] );
 
