@@ -1,5 +1,5 @@
 
-##A NOTE ABOUT THIS BRANCH
+###A NOTE ABOUT THIS BRANCH
 
 This branch works with [mjj-react-scripts](https://github.com/tharsheblows/mjj-react-scripts) -- it doesn't require the individual packages itself but picks them up from that plugin. It's mainly a proof of concept at the moment because I'm not confident it will work correctly yet.
 
@@ -16,6 +16,7 @@ Then take the quiz!
 - [CMB2 plugin from WebDevStudios](https://github.com/WebDevStudios/CMB2) to make metaboxes
 - I am not sure which version of WP is supported, but it was developed on a 4.4 beta. 
 - The [WP REST API plugin](https://wordpress.org/plugins/rest-api/).  
+- [mjj-react-scripts](https://github.com/tharsheblows/mjj-react-scripts)
 
 
 ##caveats and disclaimers
