@@ -1,4 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var React = MJJRS.React;
+var ReactDOM = MJJRS.ReactDOM;
+
 var Router = require('./router.jsx');
 
 ReactDOM.render(React.createElement(Router, null), document.getElementById('mjj-faq'));
@@ -10,6 +13,9 @@ var request = MJJRS.request;
 var marked = MJJRS.marked;
 
 var VelocityComponent = MJJRS.VelocityComponent;
+
+var React = MJJRS.React;
+var ReactDOM = MJJRS.ReactDOM;
 
 var Router = React.createClass({
 	displayName: "Router",
@@ -116,7 +122,7 @@ var Entry = React.createClass({
 					{ animation: { rotateZ: rotate } },
 					React.createElement(
 						"div",
-						{ key: this.state.clicks },
+						{ className: "faq-arrow", key: this.state.clicks },
 						"▽"
 					)
 				),
@@ -129,7 +135,7 @@ var Entry = React.createClass({
 			React.createElement(
 				VelocityComponent,
 				{ animation: hideOrShow },
-				React.createElement("div", { dangerouslySetInnerHTML: answerMarkedUp })
+				React.createElement("div", { className: "faq-answer", dangerouslySetInnerHTML: answerMarkedUp })
 			)
 		);
 	}

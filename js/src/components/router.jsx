@@ -5,6 +5,9 @@ var marked = MJJRS.marked;
 
 var VelocityComponent = MJJRS.VelocityComponent;
 
+var React = MJJRS.React;
+var ReactDOM = MJJRS.ReactDOM;
+
 var Router = React.createClass({
 
 	// I'm taking this from https://github.com/Automattic/Picard/blob/master/components/router/router.jsx even though I fully appreciate I've been warned
@@ -105,14 +108,14 @@ var Entry = React.createClass({
 			<li className={entryClass}>
 				<a onClick={this.openAnswer}>
 					<VelocityComponent animation={{rotateZ: rotate }}>
-						<div key={this.state.clicks}>&#9661;</div>
+						<div className="faq-arrow" key={this.state.clicks}>&#9661;</div>
 					</VelocityComponent>
 					<div className="faq-question">
 						{theQuestion}
 					</div>
 				</a>
 				<VelocityComponent animation={hideOrShow}>
-					<div dangerouslySetInnerHTML={answerMarkedUp}/>
+					<div className="faq-answer" dangerouslySetInnerHTML={answerMarkedUp}/>
 				</VelocityComponent>
 			</li>
 		);
