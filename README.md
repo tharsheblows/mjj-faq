@@ -1,4 +1,10 @@
 
+##A NOTE ABOUT THIS BRANCH
+
+This branch works with [mjj-react-scripts](https://github.com/tharsheblows/mjj-react-scripts) -- it doesn't require the individual packages itself but picks them up from that plugin. It's mainly a proof of concept at the moment because I'm not confident it will work correctly yet.
+
+##The description
+
 This is a WordPress plugin which makes a simple little faq. Or simple little faqs if you make more than one.
 
 It makes a custom post type, mjj_faq, which appears as "FAQs" in the menu. You can use markup in the "answer" box for each entry. But no html tags. Those will be stripped out.
