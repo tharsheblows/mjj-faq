@@ -1,0 +1,18 @@
+#mjj-faq {
+  margin-top: 2em; }
+  #mjj-faq ul.entry-list {
+    list-style-type: none; }
+    #mjj-faq ul.entry-list .faq-entry {
+      padding: 1em; }
+      #mjj-faq ul.entry-list .faq-entry .faq-arrow {
+        display: inline-block;
+        width: 3em;
+        text-align: center;
+        font-size: 1em;
+        font-weight: bolder; }
+      #mjj-faq ul.entry-list .faq-entry .faq-question {
+        display: inline-block; }
+      #mjj-faq ul.entry-list .faq-entry .faq-answer {
+        margin-left: 3.1em; }
+
+/*# sourceMappingURL=mjj-faq.css.map */
