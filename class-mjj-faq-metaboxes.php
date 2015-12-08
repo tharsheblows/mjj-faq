@@ -33,13 +33,8 @@ class MJJ_FAQ_Metaboxes{
 			}
 
 		}
-
-		add_filter( 'cmb2_render_quiz_answer', array( 'MJJ_FAQ_Metaboxes', 'cmb2_render_answer_field_callback' ), 10, 5  );
 		add_action( 'cmb2_init', array( 'MJJ_FAQ_Metaboxes', 'register_metaboxes' ) );
 
-		//override the save bit for our quiz meta
-		//actually try sanitising it this way then see if it saves: https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/custom-field-types/address-field-type.php
-		add_filter( 'cmb2_override__mjj_quiz_meta_meta_save', array( 'MJJ_FAQ_Metaboxes', 'cmb2_save_it_correctly' ), 10, 4 );
 	}
 
 	// register the metaboxes the normal way
