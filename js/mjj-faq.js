@@ -132,11 +132,7 @@ var Entry = React.createClass({
 				React.createElement(
 					VelocityComponent,
 					{ animation: { rotateZ: rotate } },
-					React.createElement(
-						"div",
-						{ className: className, key: this.state.clicks },
-						arrowComponent
-					)
+					arrowComponent
 				),
 				React.createElement(
 					"div",

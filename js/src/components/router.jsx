@@ -112,7 +112,7 @@ var Entry = React.createClass({
 			<li className={entryClass}>
 				<a onClick={this.openAnswer}>
 					<VelocityComponent animation={{rotateZ: rotate }}>
-						<div className={className} key={this.state.clicks}>{arrowComponent}</div>
+						{arrowComponent}
 					</VelocityComponent>
 					<div className="faq-question">
 						{theQuestion}
