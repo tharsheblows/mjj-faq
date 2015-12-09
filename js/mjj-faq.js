@@ -109,7 +109,19 @@ var Entry = React.createClass({
 
 		var hideOrShow = this.state.clicks % 2 === 0 ? "slideUp" : "slideDown";
 
-		var rotate = this.state.clicks % 2 === 0 ? 270 : 360;
+		var rotate = this.state.clicks % 2 === 0 ? -90 : 90;
+
+		var className = this.state.clicks % 2 === 0 ? 'faq-arrow up' : 'faq-arrow down';
+
+		var arrowComponent = this.state.clicks % 2 === 0 ? React.createElement(
+			"div",
+			{ className: className, key: this.state.clicks },
+			"▾"
+		) : React.createElement(
+			"div",
+			{ className: className, key: this.state.clicks },
+			"▸"
+		);
 
 		return React.createElement(
 			"li",
@@ -122,8 +134,8 @@ var Entry = React.createClass({
 					{ animation: { rotateZ: rotate } },
 					React.createElement(
 						"div",
-						{ className: "faq-arrow", key: this.state.clicks },
-						"▽"
+						{ className: className, key: this.state.clicks },
+						arrowComponent
 					)
 				),
 				React.createElement(

@@ -102,13 +102,17 @@ var Entry = React.createClass({
 
 		var hideOrShow = ( this.state.clicks % 2 === 0 ) ? "slideUp" : "slideDown";
 
-		var rotate = ( this.state.clicks % 2 === 0 ) ? 270 : 360;
+		var rotate = ( this.state.clicks % 2 === 0 ) ? -90 : 90;
+
+		var className = ( this.state.clicks % 2 === 0 ) ? 'faq-arrow up' : 'faq-arrow down';
+
+		var arrowComponent = ( this.state.clicks % 2 === 0 ) ? <div className={className} key={this.state.clicks}>&#9662;</div> : <div className={className} key={this.state.clicks}>&#9656;</div>;
 
 		return(
 			<li className={entryClass}>
 				<a onClick={this.openAnswer}>
 					<VelocityComponent animation={{rotateZ: rotate }}>
-						<div className="faq-arrow" key={this.state.clicks}>&#9661;</div>
+						<div className={className} key={this.state.clicks}>{arrowComponent}</div>
 					</VelocityComponent>
 					<div className="faq-question">
 						{theQuestion}
