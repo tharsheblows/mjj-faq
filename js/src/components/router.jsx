@@ -104,13 +104,13 @@ var Entry = React.createClass({
 
 		var rotate = ( this.state.clicks % 2 === 0 ) ? -90 : 90;
 
-		var className = ( this.state.clicks % 2 === 0 ) ? 'faq-arrow up' : 'faq-arrow down';
+		var linkClassName = ( this.state.clicks % 2 === 0 ) ? 'closed' : 'opened';
 
-		var arrowComponent = ( this.state.clicks % 2 === 0 ) ? <div className={className} key={this.state.clicks}>&#9662;</div> : <div className={className} key={this.state.clicks}>&#9656;</div>;
+		var arrowComponent = ( this.state.clicks % 2 === 0 ) ? <div className="faq-arrow" key={this.state.clicks}>&#9662;</div> : <div className="faq-arrow" key={this.state.clicks}>&#9656;</div>;
 
 		return(
 			<li className={entryClass}>
-				<a onClick={this.openAnswer}>
+				<a href="#" onClick={this.openAnswer} className={linkClassName}>
 					<VelocityComponent animation={{rotateZ: rotate }}>
 						{arrowComponent}
 					</VelocityComponent>

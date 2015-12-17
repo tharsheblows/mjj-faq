@@ -21,7 +21,7 @@ class MJJ_FAQ_API{
 
 	public static function register_faq_meta(){
 
-		register_api_field( 
+		register_rest_field( 
 			'mjj_faq',
         	'_mjj_faq_meta',
        		array(

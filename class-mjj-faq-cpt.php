@@ -24,7 +24,7 @@ class MJJ_FAQ_CPT{
 		register_post_type( 'mjj_faq',
 			array(
 				'labels' => array(
-					'name' => __( 'MJJ FAQs' ),
+					'name' => __( 'FAQs' ),
 					'singular_name' => __( 'FAQ' ),
 					'add_new' => 'Add New',
 					'add_new_item' => 'Add New FAQ',

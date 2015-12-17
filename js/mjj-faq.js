@@ -111,15 +111,15 @@ var Entry = React.createClass({
 
 		var rotate = this.state.clicks % 2 === 0 ? -90 : 90;
 
-		var className = this.state.clicks % 2 === 0 ? 'faq-arrow up' : 'faq-arrow down';
+		var linkClassName = this.state.clicks % 2 === 0 ? 'closed' : 'opened';
 
 		var arrowComponent = this.state.clicks % 2 === 0 ? React.createElement(
 			"div",
-			{ className: className, key: this.state.clicks },
+			{ className: "faq-arrow", key: this.state.clicks },
 			"▾"
 		) : React.createElement(
 			"div",
-			{ className: className, key: this.state.clicks },
+			{ className: "faq-arrow", key: this.state.clicks },
 			"▸"
 		);
 
@@ -128,7 +128,7 @@ var Entry = React.createClass({
 			{ className: entryClass },
 			React.createElement(
 				"a",
-				{ onClick: this.openAnswer },
+				{ href: "#", onClick: this.openAnswer, className: linkClassName },
 				React.createElement(
 					VelocityComponent,
 					{ animation: { rotateZ: rotate } },
