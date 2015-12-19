@@ -1,3 +1,8 @@
+##note
+
+I've abandoned this branch sorry. You should use the dependent branch with MJJ React Scripts instead.
+
+##description
 
 This is a WordPress plugin which makes a simple little faq. Or simple little faqs if you make more than one.
 
